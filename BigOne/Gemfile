@@ -7,7 +7,10 @@ end
 # gemy do pagination, czyli np aby artykuly byly na wielu stronach
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
-#
+# gem odpowiadajacy za 'stylizacje/zmiane html na haml'
+gem 'haml'
+# gem od obrazkow
+gem 'paperclip'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

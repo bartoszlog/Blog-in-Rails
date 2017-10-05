@@ -1,0 +1,12 @@
+
+<h2 align="center"> <%= @article.title %> </h2>
+<div class="well">
+  <h3 align="center" class="description"> <%= @article.description %></h3>
+  <div class="show-actions">
+    <% if logged_in? && current_user == @article.user %>
+      <%= link_to 'Edit this article', edit_article_path(@article),class: 'btn btn-xs btn-primary' %>
+      <%= link_to 'Delete this article', article_path(@article), method: :delete, data: {confirm: "Are you sure ?"}, class: 'btn btn-xs btn-danger' %>
+    <% end %>
+    <%= link_to 'All articles', articles_path, class: 'btn btn-xs btn-success'%>
+  </div>
+</div>

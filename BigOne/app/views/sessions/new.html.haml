@@ -1,0 +1,17 @@
+%h1{:align => 'center'} Log in
+=form_for(:session, :html => {class: "form-horizontal",role: "form"}, url: login_path) do |s|
+  .form-group
+    .control-label.col-sm-2
+      =s.label :email
+    .control-label.col-sm-8
+      =s.email_field :email, class: "form-control"
+  .form-group
+    .control-label.col-sm-2
+      =s.label :password
+    .control-label.col-sm-10
+      =s.password_field :password,class: "form-control", autocomplete: "off"
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      =s.submit "Log in", class: "btn btn-primary btn-large"
+.col-xs-2
+  =link_to "Go back to articles", articles_path

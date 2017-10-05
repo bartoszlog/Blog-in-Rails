@@ -1,0 +1,22 @@
+= render 'shared/errors', obj: @article
+.row
+  .col-xs-12
+    = form_for(@article, :html => {class: "form-horizontal",role: "form", multipart: true}) do |a|
+      .form-group
+        .control-label.col-sm-2
+          = a.label :title
+        .control-label.col-sm-8
+          = a.text_field :title, class: "form-control"
+      .form-group
+        .control-label.col-sm-2
+          = a.label :description
+        .control-label.col-sm-8
+          = a.text_area :description, rows: 10, class: "form-control"
+      .form-group
+        .control-label.col-sm8
+          = a.file_field :avatar
+      .form-group
+        .col-sm-offset-2.col-sm-12
+          = a.submit :submit
+  .col-xs-12
+    = link_to 'Go back to articles', articles_path

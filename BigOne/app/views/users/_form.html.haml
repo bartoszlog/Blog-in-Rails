@@ -1,0 +1,27 @@
+= render 'shared/errors', obj: @user
+.row
+  .col-xs-12
+    = form_for(@user, :html => {class: "form-horizontal",role: "form"}) do |a|
+      .form-group
+        .control-label.col-sm-2
+          = a.label :username
+          %br/
+        .col-sm-8
+          = a.text_field :username, class: "form-control"
+      .form-group
+        .control-label.col-sm-2
+          = a.label :email
+          %br/
+        .col-sm-10
+          = a.email_field :email, rows: 10, class: "form-control"
+      .form-group
+        .control-label.col-sm-2
+          = a.label :password
+          %br/
+        .col-sm-10
+          = a.password_field :password, rows: 10, class: "form-control"
+      .form-group
+        .col-sm-offset-2.col-sm-10
+          = a.submit "Submit", class: "btn btn-primary btn-large"
+    .col-xs-2
+    = link_to 'Go back to articles', articles_path

@@ -1,0 +1,18 @@
+- obj.each do |art|
+  .col-xs-8.col-xs-offset-2
+    .well.well-lg
+      .article-title
+        %p= link_to art.title, article_path(art)
+      .article-description
+        %p= truncate(art.description, length: 100)
+        - if art.avatar.present?
+          %div{:align => 'center'}= image_tag art.avatar
+        %small
+          Created by: #{art.user.username if art.user}, #{ time_ago_in_words(art.created_at)}
+        - if logged_in? & current_user == art.user
+          .show-actions
+            = link_to "Edit this article", edit_article_path(art),class: 'btn btn-xs btn-primary'
+            = link_to "Delete this article", article_path(art), method: :delete, data: {confirm: "Are you sure ?"}, class: 'btn btn-xs btn-danger'
+
+
+
