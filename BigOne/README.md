@@ -4,7 +4,7 @@
 
 * Rails version : 5.1.4
 
-* Gem :
+* Gems :
 
 - will_paginate
 
